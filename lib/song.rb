@@ -1,5 +1,8 @@
+require 'pry'
+
 require_relative "../config/environment.rb"
 require 'active_support/inflector'
+
 
 class Song
 
@@ -8,6 +11,7 @@ class Song
     self.to_s.downcase.pluralize
   end
 
+  
   def self.column_names
     DB[:conn].results_as_hash = true
 
@@ -61,4 +65,4 @@ class Song
 end
 
 
-
+binding.pry
